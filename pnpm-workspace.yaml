@@ -1,0 +1,45 @@
+packages:
+  - .
+
+overrides:
+  sharp: ^0.35.0
+
+minimumReleaseAge: 10080
+minimumReleaseAgeExclude:
+  - '@cloudflare/*'
+  - '@esbuild/*'
+  - '@rollup/*'
+  - '@speed-highlight/core'
+  - '@astrojs/*'
+  - astro
+  - baseline-browser-mapping
+  - caniuse-lite
+  - deslop-js
+  - electron-to-chromium
+  - esbuild
+  - miniflare
+  - nanoid
+  - node-releases
+  - postcss
+  - oxlint-plugin-react-doctor
+  - readdirp
+  - react-doctor
+  - rollup
+  - sharp
+  - tinyexec
+  - undici
+  - workerd
+  - wrangler
+blockExoticSubdeps: true
+trustPolicy: no-downgrade
+trustPolicyExclude:
+  - 'chokidar@4.0.3'
+  - 'semver@6.3.1'
+onlyBuiltDependencies:
+  - esbuild
+  - sharp
+  - workerd
+allowBuilds:
+  esbuild: true
+  sharp: true
+  workerd: true

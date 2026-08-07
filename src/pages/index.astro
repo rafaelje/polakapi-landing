@@ -1,0 +1,121 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CopyButton from '../components/CopyButton';
+import ProductMock from '../components/ProductMock.astro';
+
+const installCommand = 'gh release download --repo rafaelje/polakapi --pattern "*"';
+const features = [
+  {
+    number: '01',
+    title: 'Your projects stay organized.',
+    body: 'Group repositories into focused workspaces, see what is running, and jump between projects without losing the thread.',
+    signal: 'workspace / project / branch',
+  },
+  {
+    number: '02',
+    title: 'Real terminals, side by side.',
+    body: 'Open multiple PTY-backed terminal panes inside one native desktop window. Resize the layout and keep every session where you left it.',
+    signal: 'shell + claude + codex',
+  },
+  {
+    number: '03',
+    title: 'Agent workflows, on demand.',
+    body: 'Run loop, prompt, adversarial review, and agent flows with the CLI tools already installed on your machine.',
+    signal: '/loop → /review → done',
+  },
+  {
+    number: '04',
+    title: 'Context that survives the switch.',
+    body: 'Keep project notes, terminal layouts, and workspace state close to the work instead of scattered across windows.',
+    signal: 'state saved locally',
+  },
+];
+---
+
+<BaseLayout
+  title="PolakAPI — One window for every terminal"
+  description="PolakAPI is a native desktop workspace for local terminals, projects, notes, and coding agent flows."
+>
+  <section class="hero" id="top">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="eyebrow"><span></span>native terminal workspace</div>
+    <h1>Every project.<br />Every terminal.<br /><em>One window.</em></h1>
+    <p class="hero-copy">
+      PolakAPI brings local projects, persistent terminal panes, notes, and coding agent flows into one focused desktop workspace.
+      <strong>No browser tabs. No lost context.</strong>
+    </p>
+    <div class="hero-actions">
+      <a class="button button-primary" href="https://github.com/rafaelje/polakapi/releases/latest" target="_blank" rel="noreferrer">
+        Download latest <span>↗</span>
+      </a>
+      <a class="button button-secondary" href="https://github.com/rafaelje/polakapi" target="_blank" rel="noreferrer">
+        View source
+      </a>
+    </div>
+    <p class="hero-meta">Tauri 2 · Rust PTY · TypeScript · macOS release</p>
+  </section>
+
+  <section class="signal-strip" aria-label="Product highlights">
+    <div><strong>Native</strong><span>Tauri desktop shell</span></div>
+    <div><strong>Local</strong><span>Your tools, your machine</span></div>
+    <div><strong>Persistent</strong><span>Layouts and notes saved</span></div>
+    <div><strong>Flexible</strong><span>Claude, Codex, OpenCode</span></div>
+  </section>
+
+  <section class="workspace-section" id="workspace">
+    <div class="section-kicker"><span>fig. 01</span><span>the command center</span></div>
+    <ProductMock />
+    <p class="figure-caption">A faithful product view: workspaces on the left, PTY terminals at the center, agent flows on the right, and project notes below.</p>
+  </section>
+
+  <section class="features-section" id="features">
+    <header class="section-heading">
+      <div class="eyebrow"><span></span>built for uninterrupted work</div>
+      <h2>Less window management.<br /><em>More momentum.</em></h2>
+    </header>
+    <div class="feature-list">
+      {features.map((feature) => (
+        <article class="feature-row">
+          <span class="feature-number">{feature.number}</span>
+          <div class="feature-copy">
+            <h3>{feature.title}</h3>
+            <p>{feature.body}</p>
+          </div>
+          <div class="feature-signal"><i></i>{feature.signal}</div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="workflow-section" id="workflow">
+    <div class="workflow-copy">
+      <div class="eyebrow"><span></span>one simple loop</div>
+      <h2>Open. Run.<br /><em>Keep moving.</em></h2>
+      <p>PolakAPI stays out of the way while keeping the pieces of active development visible and within reach.</p>
+    </div>
+    <ol class="workflow-steps">
+      <li><span>01</span><div><strong>Add your project</strong><p>Point PolakAPI at any local repository.</p></div></li>
+      <li><span>02</span><div><strong>Shape your workspace</strong><p>Open shells and agent CLIs in resizable panes.</p></div></li>
+      <li><span>03</span><div><strong>Return without rebuilding context</strong><p>Your layout, notes, and project organization remain ready.</p></div></li>
+    </ol>
+  </section>
+
+  <section class="install-section">
+    <div>
+      <div class="eyebrow"><span></span>source available</div>
+      <h2>Your terminal stack,<br /><em>finally together.</em></h2>
+      <p>Download the latest release or inspect every line on GitHub.</p>
+    </div>
+    <div class="install-panel">
+      <span class="install-label">latest release</span>
+      <div class="command-box">
+        <code><b>$</b>{installCommand}</code>
+        <CopyButton value={installCommand} client:load />
+      </div>
+      <div class="install-links">
+        <a href="https://github.com/rafaelje/polakapi/releases/latest" target="_blank" rel="noreferrer">Browse downloads ↗</a>
+        <a href="https://github.com/rafaelje/polakapi" target="_blank" rel="noreferrer">Read the source ↗</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
