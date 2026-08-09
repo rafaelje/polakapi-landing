@@ -1,0 +1,31 @@
+# polakapi
+
+> polakapi is a cross-platform desktop workspace for developers that keeps local projects, multiple PTY-backed terminals, project notes, and coding-agent CLI sessions visible together in one native window.
+
+polakapi is a desktop application, not an API or a hosted coding agent. It runs shells and command-line tools already installed on the user's machine. Compatible workflows include ordinary shell sessions and tools such as Claude Code, OpenAI Codex, and OpenCode.
+
+Key facts:
+
+- The primary interaction model is simultaneous, resizable panes: active terminals and agents remain visible instead of being hidden behind tabs.
+- Supported desktop platforms are Linux, macOS, and Windows.
+- The desktop shell uses Tauri 2; Rust and `portable-pty` manage PTY processes; TypeScript, Vite, and xterm.js power the interface.
+- Workspace layout and project notes are persisted locally through the Tauri store plugin.
+- The canonical product name is `polakapi`, always written in lowercase.
+
+Last reviewed: 2026-08-08.
+
+## Product
+
+- [Source repository](https://github.com/rafaelje/polakapi): Canonical source code and project information for polakapi.
+- [Project README](https://raw.githubusercontent.com/rafaelje/polakapi/main/README.md): Plain-Markdown overview of the product, technology stack, requirements, development workflow, project structure, and architecture.
+- [Releases and downloads](https://github.com/rafaelje/polakapi/releases): Published builds and release notes for Linux, macOS, and Windows.
+
+## Development
+
+- [Development instructions](https://github.com/rafaelje/polakapi#development): Local setup commands and the complete quality-check workflow.
+- [Project structure](https://github.com/rafaelje/polakapi#project-structure): Directory-level guide to the frontend, terminal, layout, notes, persistence, and Tauri code.
+- [Architecture notes](https://github.com/rafaelje/polakapi#architecture-notes): PTY ownership, typed frontend-to-Rust communication, session cleanup, persistence, and permissions guidance.
+
+## Optional
+
+- [Issue tracker](https://github.com/rafaelje/polakapi/issues): Bug reports, feature requests, and public project discussion.
