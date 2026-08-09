@@ -33,7 +33,7 @@ export default function ThemeToggle() {
       onClick={toggleTheme}
     >
       <span aria-hidden="true">{theme === 'dark' ? '◐' : '◑'}</span>
-      <span>{theme === 'dark' ? 'ink' : 'paper'}</span>
+      <span>{theme === 'dark' ? 'blackout' : 'daylight'}</span>
     </button>
   );
 }

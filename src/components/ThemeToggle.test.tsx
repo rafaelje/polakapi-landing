@@ -17,11 +17,13 @@ describe('ThemeToggle', () => {
   it('switches the document between dark and light themes', () => {
     render(<ThemeToggle />);
 
+    expect(screen.getByText('blackout')).toBeInTheDocument();
     fireEvent.click(screen.getByRole('button', { name: /use light theme/i }));
 
     expect(document.documentElement.dataset.theme).toBe('light');
     expect(localStorage.getItem('polakapi-theme')).toBe('light');
     expect(document.querySelector('meta[name="theme-color"]')).toHaveAttribute('content', '#f0ede6');
+    expect(screen.getByText('daylight')).toBeInTheDocument();
     expect(screen.getByRole('button', { name: /use dark theme/i })).toBeInTheDocument();
   });
 

@@ -1,6 +1,6 @@
-# PolakAPI Landing
+# polakapi landing
 
-Single-page Astro site for [PolakAPI](https://github.com/rafaelje/polakapi), built as a static Cloudflare asset deployment.
+Single-page Astro site for [polakapi](https://github.com/rafaelje/polakapi), built as a static Cloudflare asset deployment.
 
 ## Local development
 
